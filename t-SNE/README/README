@@ -45,7 +45,7 @@ tSNE_fh_only_adjusted.py: performs t-Distributed Stochastic Neighbor
 
                         python tSNE_fh_only_adjusted.py -i /path/to/input/file --nonPSI 0.01
 
-        tSNE_BI_only.py: performs t-Distributed Stochastic Neighbor Embedding
+        tSNE_fh_only.py: performs t-Distributed Stochastic Neighbor Embedding
                          only on cell lines tagged with fh (Firehose).
                          Does not adjust for events with non-PSI values
                          and therefore, only selects for events that has
