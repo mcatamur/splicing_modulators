@@ -1,0 +1,85 @@
+/PCA/
+
+###################################################
+#                                                 #
+# PCA method from scitkitlearn                    #
+#                                                 #
+# This folder contains scripts for Principal      #
+# Component Analysis. Different variations in     #
+# script are due to tissue/tag filtering          #
+#                                                 #
+###################################################
+
+Each script is described below with a sample command to run
+the script.
+
+Input file for all the scripts below is tsv file of top 25% most variant
+alternative splicing events.
+
+
+PCA_BI_only_adjusted.py: performs Principal Component Analysis only on
+                         cell lines tagged with BI (Broad Institute).
+                         "Adjusted" indicates that script has option
+                         to adjust events that meet a threshold for
+                         non-PSI values. Non-PSI values are replaced
+                         with the the median PSI value for that event.
+                         Data is centered by converting PSI values to
+                         Z-scores.
+
+                        python PCA_BI_only_adjusted.py -i /path/to/input/file --nonPSI 0.01
+
+        PCA_BI_only.py: performs Principal Component Analysis only on
+                        cell lines tagged with BI (Broad Institute).
+                        Does not adjust for events with non-PSI values
+                        and therefore, only selects for events that has
+                        a [numerical] value for each cell line.
+
+                        python PCA_BI_only.py -i /path/to/input/file
+
+PCA_fh_only_adjusted.py: performs Principal Component Analysis only on
+                        cell lines tagged with fh (Firehose).
+                        "Adjusted" indicates that script has option
+                        to adjust events that meet a threshold for
+                        non-PSI values. Non-PSI values are replaced
+                        with the the median PSI value for that event.
+                        Data is centered by converting PSI values to
+                        Z-scores.
+
+                        python PCA_fh_only_adjusted.py -i /path/to/input/file --nonPSI 0.01
+
+        PCA_BI_only.py: performs Principal Component Analysis only on
+                        cell lines tagged with fh (Firehose).
+                        Does not adjust for events with non-PSI values
+                        and therefore, only selects for events that has
+                        a [numerical] value for each cell line.
+
+                        python PCA_fh_only.py -i /path/to/input/file
+
+PCA_tissue_outlier_adjusted.py: performs Principal Component Analysis
+                                on all cell lines regardless of tags.
+                                "Adjusted" indicates that script has option
+                                to adjust events that meet a threshold for
+                                non-PSI values. Non-PSI values are replaced
+                                with the the median PSI value for that event.
+                                Data is centered by converting PSI values to
+                                Z-scores.
+
+                                python PCA_tissue_outlier_adjusted.py -i /path/to/input/file --nonPSI 0.01
+
+
+PCA_tissue_outlier.py: performs Principal Component Analysis
+                      on all cell lines regardless of tags.
+                      Does not adjust for events with non-PSI values
+                      and therefore, only selects for events that has
+                      a [numerical] value for each cell line.
+
+                      python PCA_tissue_outlier.py -i /path/to/input/file
+
+
+PCA_visualize_non_PSI.py:  performs Principal Component Analysis
+                           on all cell lines regardless of tag, but this script
+                           is used to visualize cell lines that have the highest number
+                           of non-PSI values across all events. Cell lines in red are in
+                           the 90th percentile for most number of non-PSI values.
+
+                           python PCA_visualize_non_PSI.py -i /path/to/input/file --v_nonPSI 0.01
