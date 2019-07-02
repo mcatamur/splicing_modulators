@@ -130,8 +130,12 @@ class outputAnalyzer() :
         with open(self.inputFile) as file:
             tsvReader = csv.reader(file, dialect = 'excel-tab')
             next(tsvReader, None)
+            i = 1
             for row in tsvReader:
+                print (i)
                 self.doIQR_part1(row)
+                i += 1
+
 
 
     def doIQR_part1(self, row):

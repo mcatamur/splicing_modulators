@@ -210,7 +210,7 @@ class outputAnalyzer() :
         #pca.fit(X)
         #X = pca.fit_transform(X)
         #X = pca.fit_transform(X)
-        #print (X.shape)
+        print (X.shape)
         #print (X)
 
 

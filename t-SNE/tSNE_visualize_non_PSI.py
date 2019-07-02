@@ -245,8 +245,8 @@ class outputAnalyzer() :
         #legend = list(colors.keys())
         plt.autoscale(enable=True, axis='both', tight=None)
         #plt.axis([-20, 80, -40, 85])
-        plt.ylabel('PC 1')
-        plt.xlabel('PC 2')
+        plt.ylabel('x[1]')
+        plt.xlabel('x[2]')
         #plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
         plt.show()
 

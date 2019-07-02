@@ -50,7 +50,7 @@ class outputAnalyzer() :
         self.adjust_NA_values()
         self.remove_NA_values()
         self.visualize_psi()
-        self.Zscore()
+        #self.Zscore()
         self.doPCA()
 
 
@@ -143,7 +143,7 @@ class outputAnalyzer() :
                     NA_count += 1
 
             #Check if NaNs are only 1% of the data.
-            if float(NA_count/len(self.raw_PCA_data[event])) <= 0.01:
+            if float(NA_count/len(self.raw_PCA_data[event])) <= 0.00:
                 #If 1%, change all NA values to the median
                 #Append all numerical data to a list, then sort
                 psi_values = []
@@ -272,12 +272,12 @@ class outputAnalyzer() :
                    'STOMACH' : '#7B241C'}
 
         #pca = PCA(n_components=2)
-        X_raw = np.asarray((list(self.PCA_data_tissue.values())))
+        X_raw = np.asarray((list(self.raw_PCA_data.values())))
         X = PCA(n_components=2).fit_transform(X_raw)
         #pca.fit(X)
         #X = pca.fit_transform(X)
         #X = pca.fit_transform(X)
-        #print (X.shape)
+        print (X.shape)
         #print (X)
 
 

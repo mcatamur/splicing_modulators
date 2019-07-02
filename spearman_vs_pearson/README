@@ -1,0 +1,10 @@
+Multi step script to correlate ic50 values with outlier counts from
+IQR_BI_only.py script (see IQR repository)
+Produces line plots of correlation and Pearson and Spearman correlation values
+
+Step 1: step1_find_ccle.py
+produce input files for steps 2 & 3
+
+Step 2: step2_plot_correlation.py
+parse file for ic50 values
+plot ic50 values vs. outlier counts for specific tissue type and drug name

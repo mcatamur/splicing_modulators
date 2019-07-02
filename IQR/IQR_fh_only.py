@@ -69,8 +69,8 @@ class outputAnalyzer() :
                 else:
                     pass
 
-        for item in self.tissue_index:
-            print (item, len(self.tissue_index[item]))
+        #for item in self.tissue_index:
+            #print (item, len(self.tissue_index[item]))
 
         self.tissue_event_counts = {key:0 for key, value in self.tissue_index.items()}
 

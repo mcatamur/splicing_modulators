@@ -141,7 +141,7 @@ class outputAnalyzer() :
                     NA_count += 1
 
             #Check if NaNs are only 1% of the data.
-            if float(NA_count/len(self.raw_PCA_data[event])) <= 0.05:
+            if float(NA_count/len(self.raw_PCA_data[event])) <= 0.01:
                 #If 1%, change all NA values to the median
                 #Append all numerical data to a list, then sort
                 psi_values = []
@@ -245,12 +245,14 @@ class outputAnalyzer() :
                    'STOMACH' : '#7B241C'}
 
         #pca = PCA(n_components=2)
+        for item in self.PCA_data_tissue:
+            print (len(self.PCA_data_tissue[item]))
         X_raw = np.asarray((list(self.PCA_data_tissue.values())))
         X = PCA(n_components=2).fit_transform(X_raw)
         #pca.fit(X)
         #X = pca.fit_transform(X)
         #X = pca.fit_transform(X)
-        #print (X.shape)
+        print (X.shape)
         #print (X)
 
 
